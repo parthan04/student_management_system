@@ -45,7 +45,7 @@ const getAllUsers=async(req,res)=>{
 
        res.json(users);
 
-    } catch(error){
+    } catch(err){
         
         console.log(err)
 
@@ -69,7 +69,7 @@ const updatAllUsers=async(req,res)=>{
             "message":"user updated",
         })
 
-    }catch(error){
+    }catch(err){
         console.log(err)
         res.status(500).json({
             "message":"user not updated SERVER ERROR",

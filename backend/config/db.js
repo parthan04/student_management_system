@@ -14,18 +14,20 @@ const pool = mysql.createPool({
 });
 
 //CONNECT TO DATABASE 
-pool.query(pool,(err, result) => {
-    if (err) {
-        console.log(err)
-    }
-    else {
-        console.log("database connected")
-    }
-});
-
+// pool.query(pool,(err, result) => {
+//     if (err) {
+//         console.log(err)
+//     }
+//     else {
+//         console.log("database connected")
+//     }
+// });
+ssl: {
+   rejectUnauthorized: false
+}
 pool.getConnection((err,connection)=>{
     if(err){
-        console.log(err)
+        console.log("Database Connection Error",err)
     }
     else{
         console.log("database connected")

@@ -8,7 +8,9 @@ const app = express();
 const cors = require("cors");
 
 // MIDDLEWARE
-app.use(cors());
+app.use(cors({
+  origin:"https://student-management-system-gamma-eight.vercel.app/"
+}));
 app.use(express.json());
 
 //IMPORT ROUTES
