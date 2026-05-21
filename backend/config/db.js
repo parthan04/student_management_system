@@ -8,9 +8,14 @@ const pool = mysql.createPool({
     user:process.env.DB_USER,
     database: process.env.DB_NAME,
     password:process.env.DB_PASSWORD,
+
     waitForConnections: true,
     connectionLimit: 10,
-    queueLimit: 0
+    queueLimit: 0,
+
+    ssl: {
+        rejectUnauthorized: false
+   }
 });
 
 //CONNECT TO DATABASE 
@@ -22,12 +27,11 @@ const pool = mysql.createPool({
 //         console.log("database connected")
 //     }
 // });
-ssl: {
-   rejectUnauthorized: false
-}
+
+//TEST CONNECTION
 pool.getConnection((err,connection)=>{
     if(err){
-        console.log("Database Connection Error",err)
+        console.log("Database Connection Error",err.message)
     }
     else{
         console.log("database connected")
