@@ -22,8 +22,8 @@ const enrollmentRoutes = require("../routes/enrollmentRoutes");
 // USE ROUTES
 app.use("/api/users", userRoutes);
 app.use("/api/students", studentRoutes);
-app.use("/api/course", courseRoutes);
-app.use("/api/enrollment", enrollmentRoutes);
+app.use("/api/courses", courseRoutes);
+app.use("/api/enrollments", enrollmentRoutes);
 
 const port =process.env.PORT;
 
